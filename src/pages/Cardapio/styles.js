@@ -7,6 +7,7 @@ flex-direction: column;
 margin-top: 80px;
 border-radius: 15px 15px 0 0;
 height: 100px;
+min-width: 1400px;
 
 
 

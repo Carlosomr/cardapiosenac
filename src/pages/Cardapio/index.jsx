@@ -4,7 +4,7 @@ import {Container, Perfil, Pedidos} from "./styles"
 
 
 
-export function Cardapio(){
+function Cardapio(){
   return(
     
     
@@ -44,4 +44,5 @@ export function Cardapio(){
     
     
   )
-}
+} 
+export default Cardapio;
