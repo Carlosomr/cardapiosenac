@@ -1,51 +1,38 @@
 import styled from "styled-components";
 export const Container = styled.main`
-
 display: flex;
 flex-direction: column;
 
-margin-top: 130px;
+margin-top: 80px;
 border-radius: 15px 15px 0 0;
 height: 100px;
 min-width: 1400px;
 
 
-
 `;
-export const Perfil = styled.main`
+export const ProfileHeader = styled.div`
 
-background: ${({ theme }) => theme.COLORS.grey};
+background: white;
 border-radius: 15px 15px 0 0;
 padding-bottom: 25px;
-display: flex;
-
-
-
+border: solid red;
 
 div{
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 15px;
+    margin-left: 100px;
 }
-
 img {
     border-radius: 50%;
     width: 130px;
-    margin-left: 20px;
+    margin-left: 100px;
     margin-top: 10px;
 }
 p{
-    color: ${({ theme }) => theme.COLORS.Green};
-    font-weight: 600;
+    color: red;
 }
 
-`;
-
-export const Pedidos = styled.main`
-background: white;
-
-display: grid;
-    grid-template-columns: repeat(5, 1fr);
 
 `;
