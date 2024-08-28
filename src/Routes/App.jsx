@@ -7,6 +7,7 @@ export function App() {
     <Router>
       <Routes>
         <Route path="/cardapio" element={<Cardapio />} />
+        
       </Routes>
     </Router>
   );
