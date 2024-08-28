@@ -68,15 +68,9 @@ function Cardapio(){
         <div>
         <input type="search" id="search" placeholder="Busque por um item na l  oja"/>
         <button onclick="searchItem()">Buscar</button>
-
-
         </div>
        
       </Perfil>
-    
-        
-    
-
     <Pedidos>
          
           {produtos.map(item => {
@@ -90,13 +84,8 @@ function Cardapio(){
             
             )
         })}
-        
-        
     </Pedidos>
-    
     </Container>
-    
-    
   )
 } 
 export default Cardapio;
