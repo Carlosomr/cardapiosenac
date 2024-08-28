@@ -58,7 +58,7 @@ justify-content: space-between;
 
 
 a {
-    padding: 15px 25px;
+    padding: 10px 20px;
             text-decoration: none;
             font-size: 18px;
             color: #fff;
@@ -76,7 +76,7 @@ div{
 }
 span{
     color: white;
-
+    font-weight: 100;
 }
 img{
     border-radius: 50%;
@@ -84,9 +84,6 @@ img{
     
 }
 `;
-
-
-
 export const MenuToggle = styled.button`
   position: fixed;
   top: 100px;
@@ -97,16 +94,16 @@ export const MenuToggle = styled.button`
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
-  width: 40px; // Aumentamos o ancho
-  height: 40px; // Aumentamos o alto
-  font-size: 24px; // Aumentamos o tamanho da fonte
-  border-radius: 8px; // Reduzimos as cantos para um círculo
+  width: 40px; 
+  height: 40px; 
+  font-size: 24px; 
+  border-radius: 8px; 
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   background-color: #333;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); // Adicionamos sombra para melhor visualização
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
 
 
 
@@ -119,5 +116,24 @@ export const MenuToggle = styled.button`
     transform: rotate(180deg);
   }
 `;
-
+export const Cadastrar = styled.div`
+margin: auto;
+width: 50%;
+display: flex;
+flex-direction: column;
+gap: 15px;
+h1{
+    margin: auto;
+    font-size: 20px;
+    font-weight: 600;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label{
+    font-weight: 500;
+}
+`;
 

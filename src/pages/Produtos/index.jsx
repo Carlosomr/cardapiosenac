@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, ProfileHeader, Menu, MenuToggle,} from './styles';
+import { Container, ProfileHeader, Menu, MenuToggle, Cadastrar} from './styles';
 import { Header } from '../../components/Header';
 
 
@@ -33,12 +33,28 @@ function Produtos() {
 
         <div>
         <img src= "https://github.com/Carlosomr.png"></img>
-        <span><a href="/">Logout</a></span>
+        <span><a href="/">Sair</a></span>
         </div>
       </Menu>
       <MenuToggle onClick={toggleMenu} className={isOpen ? 'open' : ''}>
         &#9776; 
       </MenuToggle>
+      
+      <Cadastrar>
+
+        <h1>Cadastrar itens da loja</h1>
+        <form>
+        <label htmlFor="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label htmlFor="imagem">Imagem:</label>
+        <input type="url" id="imagem" name="imagem" required />
+
+        <label htmlFor="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" required />
+
+        </form>
+      </Cadastrar>
       
     </Container>
   );
