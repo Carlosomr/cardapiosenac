@@ -1,0 +1,15 @@
+{
+  "usuarios": [
+    {
+      "id": "71bc",
+      "primeiroNome": "Kadu",
+      "segundoNome": "Morais",
+      "email": "kadu@gmail.com",
+      "senha": "kadu",
+      "endereco": "Rua da rua",
+      "cep": "20292929",
+      "cpf": "92828282",
+      "cnpj": "82827282792"
+    }
+  ]
+}

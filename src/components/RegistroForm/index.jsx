@@ -13,9 +13,41 @@ const RegistroForm = ({onRegistro}) => {
     const [cpf , setCpf] = useState('');
     const [cnpj, setCnpj] = useState('');
 
-    const handleSubmitRegistro = (e) => {
+    const handleSubmitRegistro = async (e) => {
         e.preventDefault();
-        onRegistro({primeiroNome,segundoNome,email,senha,endereco,cep,cpf,cnpj});
+    
+        const formData = {
+            primeiroNome,
+            segundoNome,
+            email,
+            senha,
+            endereco,
+            cep,
+            cpf,
+            cnpj
+        };
+    
+        try {
+            const response = await fetch('http://localhost:5000/usuarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const result = await response.json();
+            console.log('Success:', result);
+    
+            onRegistro(result);
+    
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (

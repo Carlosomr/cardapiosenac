@@ -5,11 +5,32 @@ import { FormContainer } from './styles';
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [senha, setsenha] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onLogin({ email, password });
+
+    try {
+      const response = await fetch('http://localhost:5000/usuarios');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const usuarios = await response.json();
+      const user = usuarios.find(
+        (user) => user.email === email && user.senha === senha
+      );
+
+      if (user) {
+        console.log('Login Success:', user);
+        onLogin(user);
+      } else {
+        console.log('Invalid credentials');
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -21,10 +42,10 @@ const LoginForm = ({ onLogin }) => {
         onChange={(e) => setEmail(e.target.value)}
       />
       <Input
-        type="password"
+        type="senha"
         placeholder="Senha"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={senha}
+        onChange={(e) => setsenha(e.target.value)}
       />
       <Button type="submit">Entrar</Button>
     </FormContainer>
