@@ -20,5 +20,9 @@ img  {
     
 }
 
+@media (min-width: 768px) {
+    width:100%
+
+  }
 
 `;

@@ -66,7 +66,7 @@ function Cardapio(){
         </div>
 
         <div>
-        <input type="search" id="search" placeholder="Busque por um item na l  oja"/>
+        <input type="search" id="search" placeholder="Busque por um item na loja"/>
         <button onclick="searchItem()">Buscar</button>
         </div>
        

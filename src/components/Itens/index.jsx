@@ -1,6 +1,5 @@
-import {Produto, ProdutoItem } from "./styles"
 
- 
+import {Produto, ProdutoItem } from "./styles"
 
 export function Itens({nome, preco, imagem}){
   return(
@@ -13,9 +12,6 @@ export function Itens({nome, preco, imagem}){
          </div>
         </ProdutoItem>
     </Produto>
-    
-
-    
     
   )
 }
