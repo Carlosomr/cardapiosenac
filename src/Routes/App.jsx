@@ -9,8 +9,8 @@ export function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/cardapio" element={<Cardapio />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Cardapio />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/administrador" element={<Produtos />} />
         <Route path="/registro" element={<Registro />} />
       </Routes>
