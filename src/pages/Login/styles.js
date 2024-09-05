@@ -26,6 +26,28 @@ export const PageContainer = styled.div`
       height: 100%;
     }
 
+    @media (max-width: 700px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    img{
+      object-fit: cover;
+      width: 50%;
+      
+    }
+
+    @media (max-width: 400px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    img{
+      object-fit: cover;
+      width: 0%;
+    }
+  }
+
   }
 `;
 export const Bloco = styled.main`

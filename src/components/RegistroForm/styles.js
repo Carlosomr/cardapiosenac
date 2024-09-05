@@ -8,4 +8,11 @@ export const RegistroContainer = styled.form`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 700px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+  }
 `;

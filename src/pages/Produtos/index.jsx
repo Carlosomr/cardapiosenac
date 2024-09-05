@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Container, ProfileHeader, Menu, MenuToggle, Cadastrar} from './styles';
 import { Header } from '../../components/Header';
 import Input from '../../components/Input';
@@ -62,7 +61,7 @@ function Produtos() {
       <Menu isOpen={isOpen}>
         <ul>
           <li><a href="/administrador">Cadastrar Itens</a></li>
-          <li><a href="#services">Cadastrar Usuarios</a></li>
+          <li><a href="/registro">Cadastrar acesso a loja</a></li>
           <li><a href="/cardapio">Cardapio digital</a></li>
         </ul>
 

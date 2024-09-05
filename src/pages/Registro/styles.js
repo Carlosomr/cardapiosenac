@@ -20,11 +20,23 @@ export const RegistroContainer = styled.div`
   @media (max-width: 700px) {
     display: flex;
     width: 100%;
+    height: 100%;
 
     img{
       object-fit: cover;
-      height: 100%;
+      width: 60%;
     }
+  }
+  @media (max-width: 400px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    img{
+      object-fit: cover;
+      width: 0%;
+    }
+  }
 `;
 export const Bloco = styled.main`
     margin: 0;
@@ -36,6 +48,14 @@ export const Bloco = styled.main`
     background-color: #f0f2f5;
     color: #333;
   }
+
+  @media (min-width: 700px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    
+  }
 `;
 
 export const BlocoDois = styled.main`
@@ -43,4 +63,13 @@ export const BlocoDois = styled.main`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+
+  @media (min-width: 700px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    
+  }
 `;
