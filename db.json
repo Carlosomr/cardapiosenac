@@ -10,6 +10,17 @@
       "cep": "20292929",
       "cpf": "92828282",
       "cnpj": "82827282792"
+    },
+    {
+      "id": "aed7",
+      "primeiroNome": "Carlos",
+      "segundoNome": "Aquino",
+      "email": "carlos@email.com",
+      "senha": "kadu",
+      "endereco": "Rua da rua",
+      "cep": "55522221",
+      "cpf": "22525244655",
+      "cnpj": "25252424458269"
     }
   ]
 }

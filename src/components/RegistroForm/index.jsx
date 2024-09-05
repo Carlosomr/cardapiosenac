@@ -56,49 +56,52 @@ const RegistroForm = ({onRegistro}) => {
             type="nome"
             placeholder="Nome"
             value={primeiroNome}
-            onChange={(e) => setPrimeiroNome(e.target.value)}
+            onChange={(value) => setPrimeiroNome(value)}
             />
             <Input
             type="sobrenome"
             placeholder="Sobrenome"
             value={segundoNome}
-            onChange={(e) => setSegundoNome(e.target.value)}
+            onChange={(value) => setSegundoNome(value)}
             />
             <Input
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(value) => setEmail(value)}
             />
             <Input
-            type="senha"
+            type="password"
             placeholder="Senha"
             value={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            onChange={(value) => setSenha(value)}
             />
             <Input
             type="endereco"
             placeholder="Endereco"
             value={endereco}
-            onChange={(e) => setEndereco(e.target.value)}
+            onChange={(value) => setEndereco(value)}
             />
             <Input
-            type="cep"
+            type="cod"
+            maxLength="8"
             placeholder="CEP"
             value={cep}
-            onChange={(e) => setCep(e.target.value)}
+            onChange={(value) => setCep(value)}
             />
             <Input
-            type="cpf"
+            type="cod"
+            maxLength="11"
             placeholder="CPF"
             value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
+            onChange={(value) => setCpf(value)}
             />
             <Input
-            type="cnpj"
+            type="cod"
+            maxLength="14"
             placeholder="CNPJ"
             value={cnpj}
-            onChange={(e) => setCnpj(e.target.value)}
+            onChange={(value) => setCnpj(value)}
             />
 
             <Button type="">Registrar</Button>

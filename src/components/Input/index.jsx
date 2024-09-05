@@ -1,8 +1,16 @@
 import React from 'react';
 import { StyledInput } from './styles';
 
-const Input = ({ type, placeholder, value, onChange }) => {
-  return <StyledInput type={type} placeholder={placeholder} value={value} onChange={onChange} />;
+const Input = ({ type, maxLength, placeholder, value, onChange }) => {
+  const handleChange = (e) => {
+    let inputValue = e.target.value;
+
+    if (type === 'cod') {
+      inputValue = inputValue.replace(/\D/g, '');
+    }
+    onChange(inputValue);
+  }
+  return <StyledInput type={type} maxLength={maxLength} placeholder={placeholder} value={value} onChange={handleChange} />;
 };
 
 export default Input;

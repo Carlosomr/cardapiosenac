@@ -39,13 +39,13 @@ const LoginForm = ({ onLogin }) => {
         type="email"
         placeholder="E-mail"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(value) => setEmail(value)}
       />
       <Input
-        type="senha"
+        type="password"
         placeholder="Senha"
         value={senha}
-        onChange={(e) => setsenha(e.target.value)}
+        onChange={(value) => setsenha(value)}
       />
       <Button type="submit">Entrar</Button>
     </FormContainer>
