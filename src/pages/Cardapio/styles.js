@@ -39,7 +39,7 @@ input{
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
-  min-width: 500px;
+  min-width: 300px;
   font-size: 16px;
 }
 button{

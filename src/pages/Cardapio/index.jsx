@@ -1,56 +1,31 @@
+import React, { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import { Itens } from '../../components/Itens';
 import {Container, Perfil, Pedidos} from "./styles"
+import SemItens from '../../components/SemItens';
 
 
 
 
-function Cardapio(){
+function Cardapio() {
+  const [produtos, setProdutos] = useState([]);
+  const [carregando, setCarregando] = useState(true);
 
-  const produtos = [
-    {
-      id: 1,
-      imagem: "https://www.receiteria.com.br/wp-content/uploads/pizza-de-calabresa-facil-capa.jpg",
-      nome: 'Pizza de Calabreza',
-      preco: 'R$ 80,00'
-    },
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-    {
-      id: 2,
-      imagem: "https://images.pexels.com/photos/27650917/pexels-photo-27650917/free-photo-of-comida-alimento-refeicao-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      nome: 'Pizza de mussarela',
-      preco: 'R$ 90,00'
-    },
-
-    {
-      id: 3,
-      imagem: "https://www.receiteria.com.br/wp-content/uploads/pizza-de-calabresa-facil-capa.jpg",
-      nome: 'Pizza de Calabreza',
-      preco: 'R$ 80,00'
-    },
-
-    {
-      id: 4,
-      imagem: "https://images.pexels.com/photos/27650917/pexels-photo-27650917/free-photo-of-comida-alimento-refeicao-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      nome: 'Pizza de mussarela',
-      preco: 'R$ 90,00'
-    },
-    {
-      id: 1,
-      imagem: "https://www.receiteria.com.br/wp-content/uploads/pizza-de-calabresa-facil-capa.jpg",
-      nome: 'Pizza de Calabreza',
-      preco: 'R$ 80,00'
-    },
-
-    {
-      id: 2,
-      imagem: "https://images.pexels.com/photos/27650917/pexels-photo-27650917/free-photo-of-comida-alimento-refeicao-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      nome: 'Pizza de mussarela',
-      preco: 'R$ 90,00'
-    },
-  ];
-
-
+  async function fetchProducts() {
+    try {
+      const response = await fetch('https://localhost:5000/produtos');
+      const data = await response.json();
+      setProdutos(data);
+      setCarregando(false)
+    } catch (error) {
+      console.error('Erro ao carregar produtos:', error);
+      setCarregando(false);
+    }
+  }
 
   return(
     
@@ -71,20 +46,22 @@ function Cardapio(){
         </div>
        
       </Perfil>
-    <Pedidos>
-         
-          {produtos.map(item => {
-            return(
-              <Itens
+      {!carregando && produtos.length === 0 && (
+          <SemItens />
+        
+      )}
+      {!carregando && produtos.length > 0 && (
+        <Pedidos>
+          {produtos.map(item => (
+            <Itens
               key={item.id}
               imagem={item.imagem}
               nome={item.nome}
               preco={item.preco}
-               />
-            
-            )
-        })}
-    </Pedidos>
+            />
+          ))}
+        </Pedidos>
+      )}
     </Container>
   )
 } 

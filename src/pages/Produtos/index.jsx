@@ -2,55 +2,49 @@ import React, { useState } from 'react';
 import { Container, ProfileHeader, Menu, MenuToggle, Cadastrar} from './styles';
 import { Header } from '../../components/Header';
 import Input from '../../components/Input';
+import axios from 'axios'; 
 
 
 
 function Produtos() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
   const [nome, setNome] = useState('');
   const [imagem, setImagem] = useState('');
   const [preco, setPreco] = useState('');
 
   // Estado para armazenar todos os itens do cardápio
-  const [produtos, setProdutos] = useState([
-    { id: 1, nome: 'Pizza de Calabreza', imagem: 'https://www.receiteria.com.br/wp-content/uploads/pizza-de-calabresa-facil-capa.jpg', preco: 'R$ 80,00' },
-    { id: 2, nome: 'Pizza de Mussarela', imagem: 'https://images.pexels.com/photos/27650917/pexels-photo-27650917/free-photo-of-comida-alimento-refeicao-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', preco: 'R$ 90,00' },
-    { id: 3, nome: 'Pizza de Calabreza', imagem: 'https://www.receiteria.com.br/wp-content/uploads/pizza-de-calabresa-facil-capa.jpg', preco: 'R$ 80,00' },
-    { id: 4, nome: 'Pizza de Mussarela', imagem: 'https://images.pexels.com/photos/27650917/pexels-photo-27650917/free-photo-of-comida-alimento-refeicao-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', preco: 'R$ 90,00' },
-  ]);
+  const [produtos, setProdutos] = useState([]);
 
-
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     
     try {
-      // Simulando um cadastro bem-sucedido
-      const novoItem = {
-        id: Math.random(),
+      // Fazendo a chamada POST à API
+      const response = await axios.post('https://seu-endereco-da-api.com/produtos', {
         nome,
         imagem,
         preco,
-      };
-      
-      // Adicionando o novo item ao estado produtos
-      setProdutos([...produtos, novoItem]);
-      
-      console.log();
-      // Limpar os campos após o cadastro
-      setNome('');
-      setImagem('');
-      setPreco('');
+      });
 
-    } catch (error) {
-      console.error('Erro ao adicionar item:', error);
-    }
-  };
+      console.log('Resposta da API:', response.data);
 
+       // Adicionando o novo item ao estado produtos
+       setProdutos([...produtos, response.data]);
+
+       // Limpar os campos após o cadastro
+       setNome('');
+       setImagem('');
+       setPreco('');
+ 
+       alert('Produto cadastrado com sucesso!');
+     } catch (error) {
+       console.error('Erro ao adicionar item:', error.response?.data || error.message);
+       alert('Falha ao cadastrar produto. Por favor, tente novamente.');
+     }
+   };
+ 
+   const toggleMenu = () => setIsOpen(!isOpen);
+ 
   return (
     <Container>
       <Header/>
@@ -58,7 +52,7 @@ function Produtos() {
       <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
       <div>
         <strong>Pizzaria Senac</strong>
-        <p>Aberto das 18h ás 00h</p>
+        <p>Administrador</p>
         </div>
 
         <div>
@@ -72,8 +66,8 @@ function Produtos() {
         </ul>
 
         <div>
-        <img src= "https://github.com/Carlosomr.png"></img>
-        <span><a href="/">Sair</a></span>
+        <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
+        <span><a href="/login">Sair</a></span>
         </div>
       </Menu>
       <MenuToggle onClick={toggleMenu} className={isOpen ? 'open' : ''}>
@@ -83,13 +77,13 @@ function Produtos() {
       <Cadastrar>
 
         <h1>Cadastrar itens da loja</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
         <label htmlFor="nome">Nome:</label>
         <Input
         type="nome"
         placeholder="Nome"
         value={nome}
-        onChange={(e) => setnome(e.target.value)}
+        onChange={(e) => setNome(e.target.value)}
         />
 
         <label htmlFor="imagem">Imagem:</label>
@@ -107,6 +101,8 @@ function Produtos() {
         value={preco}
         onChange={(e) => setPreco(e.target.value)}
         />
+
+        <button type="submit">Cadastrar</button>
         </form>
       </Cadastrar>
       

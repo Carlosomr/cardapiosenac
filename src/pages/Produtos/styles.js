@@ -8,6 +8,21 @@ border-radius: 15px 15px 0 0;
 height: 100px;
 min-width: 1400px;
 
+@media (max-width: 1200px) {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: row;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+
 
 `;
 export const ProfileHeader = styled.div`
@@ -134,6 +149,21 @@ form{
 }
 label{
     font-weight: 500;
+}
+
+button{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  background: ${({ theme }) => theme.COLORS.Green};
+
+}
+button:hover{
+    background: ${({ theme }) => theme.COLORS.Greenbutton};
+    cursor: pointer;
 }
 `;
 

@@ -14,7 +14,17 @@ export const RegistroContainer = styled.div`
     width: 50vh;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    object-fit: cover;
   }
+
+  @media (max-width: 700px) {
+    display: flex;
+    width: 100%;
+
+    img{
+      object-fit: cover;
+      height: 100%;
+    }
 `;
 export const Bloco = styled.main`
     margin: 0;
