@@ -12,6 +12,8 @@ const RegistroForm = ({onRegistro}) => {
     const [cep, setCep] = useState('');
     const [cpf , setCpf] = useState('');
     const [cnpj, setCnpj] = useState('');
+    const [empresa, setEmpresa] = useState('');
+
 
     const handleSubmitRegistro = async (e) => {
         e.preventDefault();
@@ -24,7 +26,8 @@ const RegistroForm = ({onRegistro}) => {
             endereco,
             cep,
             cpf,
-            cnpj
+            cnpj,
+            empresa
         };
     
         try {
@@ -102,6 +105,13 @@ const RegistroForm = ({onRegistro}) => {
             placeholder="CNPJ"
             value={cnpj}
             onChange={(value) => setCnpj(value)}
+            />
+             <Input
+            type="cod"
+            maxLength="14"
+            placeholder="Nome da Empresa"
+            value={empresa}
+            onChange={(value) => setEmpresa(value)}
             />
 
             <Button type="">Registrar</Button>

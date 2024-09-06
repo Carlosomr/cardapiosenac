@@ -3,11 +3,12 @@ import { Header } from '../../components/Header';
 import { Itens } from '../../components/Itens';
 import {Container, Perfil, Pedidos} from "./styles"
 import SemItens from '../../components/SemItens';
+import {Formulario} from '../../components/Formulario';
 
 
 
 
-function Cardapio() {
+function Cardapio({}) {
   const [produtos, setProdutos] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
@@ -36,7 +37,7 @@ function Cardapio() {
     <Perfil>
       <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
       <div>
-        <strong>Pizzaria Senac</strong>
+        <strong>nome da loja</strong>
         <p>Aberto das 18h ás 00h</p>
         </div>
 
@@ -46,6 +47,7 @@ function Cardapio() {
         </div>
        
       </Perfil>
+      
       {!carregando && produtos.length === 0 && (
           <SemItens />
         

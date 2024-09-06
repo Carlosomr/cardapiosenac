@@ -9,10 +9,10 @@ import Registro from '../pages/Registro';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Cardapio />} />
+      <Route path="/cardapio" element={<Cardapio />} />
       <Route path="/login" element={<Login />} />
       <Route path="/administrador" element={<Produtos />} />
-      <Route path="/registro" element={<Registro />} />
+      <Route path="/" element={<Registro />} />
     </Routes>
   );
 }

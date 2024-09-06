@@ -19,6 +19,6 @@ function Login() {
     <Blocod>
       <LoginPage />
     </Blocod>
-  );
+  );   
 }
 export default Login;

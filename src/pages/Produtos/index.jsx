@@ -20,7 +20,7 @@ function Produtos() {
     
     try {
       // Fazendo a chamada POST à API
-      const response = await axios.post('https://seu-endereco-da-api.com/produtos', {
+      const response = await axios.post('https://localhost/produtos', {
         nome,
         imagem,
         preco,
