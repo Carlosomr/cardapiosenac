@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Input from '../Input';
 import Button from '../Button';
 import { RegistroContainer } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const RegistroForm = ({onRegistro}) => {
     const [primeiroNome, setPrimeiroNome] = useState('');
@@ -13,6 +14,7 @@ const RegistroForm = ({onRegistro}) => {
     const [cpf , setCpf] = useState('');
     const [cnpj, setCnpj] = useState('');
     const [empresa, setEmpresa] = useState('');
+    const navigate = useNavigate();
 
 
     const handleSubmitRegistro = async (e) => {
@@ -45,8 +47,8 @@ const RegistroForm = ({onRegistro}) => {
     
             const result = await response.json();
             console.log('Success:', result);
-    
             onRegistro(result);
+            navigate('/login');
     
         } catch (error) {
             console.error('Error:', error);
@@ -107,8 +109,7 @@ const RegistroForm = ({onRegistro}) => {
             onChange={(value) => setCnpj(value)}
             />
              <Input
-            type="cod"
-            maxLength="14"
+            type="nomeEmp"
             placeholder="Nome da Empresa"
             value={empresa}
             onChange={(value) => setEmpresa(value)}

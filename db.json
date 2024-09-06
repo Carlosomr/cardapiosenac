@@ -21,6 +21,18 @@
       "cep": "55522221",
       "cpf": "22525244655",
       "cnpj": "25252424458269"
+    },
+    {
+      "id": "0468",
+      "primeiroNome": "Eduard",
+      "segundoNome": "Aquino",
+      "email": "aquino@gmail.com",
+      "senha": "kadu",
+      "endereco": "Rua da rua",
+      "cep": "23123123",
+      "cpf": "41231231231",
+      "cnpj": "1231231231231",
+      "empresa": "Ifood"
     }
   ]
 }

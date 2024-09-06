@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import { FormContainer } from './styles';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [senha, setsenha] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ const LoginForm = ({ onLogin }) => {
       if (user) {
         console.log('Login Success:', user);
         onLogin(user);
+        navigate('/cardapio');
       } else {
         console.log('Invalid credentials');
       }
