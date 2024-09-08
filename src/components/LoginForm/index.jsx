@@ -13,7 +13,7 @@ const LoginForm = ({ onLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/usuarios');
+      const response = await fetch('http://localhost:5000/login');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
