@@ -8,7 +8,6 @@ export function Formulario() {
   const [primeiroNome, setPrimeiroNome] = useState('');
   const [segundoNome, setSegundoNome] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
   const [endereco, setEndereco] = useState('');
   const [cep, setCep] = useState('');
   const [cpf, setCpf] = useState('');
@@ -18,14 +17,13 @@ export function Formulario() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('https://seu-endereco-da-api.com/registro');
+        const response = await axios.get('https://localhost:5000/registro');
         const dadosRegistro = response.data;
         
         // Atualizar os estados com os dados recebidos
         setPrimeiroNome(dadosRegistro.primeiroNome || '');
         setSegundoNome(dadosRegistro.segundoNome || '');
         setEmail(dadosRegistro.email || '');
-        setSenha(dadosRegistro.senha || ''); // Note que exibir senhas é geralmente uma má prática de segurança
         setEndereco(dadosRegistro.endereco || '');
         setCep(dadosRegistro.cep || '');
         setCpf(dadosRegistro.cpf || '');
@@ -43,42 +41,39 @@ export function Formulario() {
 
     <FormDados>
     <div className="formulario-dados">
-      <h1>{empresa ? empresa : 'Dados da Empresa e Usuários'}</h1>
+      
       <div className="dados-container">
         <div className="dado-item">
-          <span>Nome:</span>
-          <p>{primeiroNome} {segundoNome}</p>
+          <span>Nome</span>
+          <p>{primeiroNome} {segundoNome}</p><br/>
         </div>
         <div className="dado-item">
-          <span>E-mail:</span>
-          <p>{email}</p>
+          <span>E-mail</span>
+          <p>{email}</p><br/>
+        </div>
+        
+        <div className="dado-item">
+          <span>Endereço</span>
+          <p>{endereco}</p> <br/>
         </div>
         <div className="dado-item">
-          <span>Senha:</span>
-          <p>{senha ? '******' : ''}</p>
+          <span>CEP</span>
+          <p>{cep}</p><br/>
         </div>
         <div className="dado-item">
-          <span>Endereço:</span>
-          <p>{endereco}</p>
+          <span>CPF</span>
+          <p>{cpf}</p><br/>
         </div>
         <div className="dado-item">
-          <span>CEP:</span>
-          <p>{cep}</p>
+          <span>CNPJ</span>
+          <p>{cnpj}</p><br/>
         </div>
         <div className="dado-item">
-          <span>CPF:</span>
-          <p>{cpf}</p>
+          <span>Empresa</span>
+          <p>{empresa}</p><br/>
         </div>
-        <div className="dado-item">
-          <span>CNPJ:</span>
-          <p>{cnpj}</p>
-        </div>
-        <div className="dado-item">
-          <span>Nome da Empresa:</span>
-          <p>{empresa}</p>
         </div>
       </div>
-    </div>
     </FormDados>
   );
 }

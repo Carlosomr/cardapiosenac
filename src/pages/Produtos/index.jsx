@@ -65,6 +65,7 @@ function Produtos() {
           <li><a href="/administrador">Cadastrar Itens</a></li>
           <li><a href="/registro">Cadastrar acesso a loja</a></li>
           <li><a href="/">Cardapio digital</a></li>
+          <li><a href="/administrador/nomes">Consultar Usuarios</a></li>
         </ul>
 
         <div>
