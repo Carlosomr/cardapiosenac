@@ -7,4 +7,4 @@
 - 1.3 Instalado o pacote react-router
 - 2 Insira no terminal o comando: npm i (para instalação das dependencias) <br><br>
 - 3 Inicie o projeto com: npm run dev <br><br>
->3. Link app backend: https://github.com/Csouzaf/projeto-integrador-4 <br>
+- 4 Link app backend: https://github.com/Csouzaf/projeto-integrador-4 <br>
