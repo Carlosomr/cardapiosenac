@@ -1,8 +1,12 @@
-# React + Vite
+# Projeto front-end Feito por Carlos Moura e Carlos Aquino
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Feito em react js com vite e javascript 
 
-Currently, two official plugins are available:
+- 1 Instalado o pacote styled components<br>
+- 1.2 Instalado o pacote axios <br>
+- 1.3 Instalado o pacote react-router
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 2 Insira no terminal o comando: npm i (para instalação das dependencias) <br><br>
+- 3 Inicie o projeto com: npm run dev <br><br>
+
+>3. Link app backend: https://github.com/Csouzaf/projeto-integrador-4 <br>

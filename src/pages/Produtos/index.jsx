@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, ProfileHeader, Menu, MenuToggle, Cadastrar} from './styles';
+import { Container, ProfileHeader, MenuContainer, MenuToggle, Cadastrar} from './styles';
 import { Header } from '../../components/Header';
 import Input from '../../components/Input';
 import axios from 'axios'; 
@@ -7,7 +7,9 @@ import axios from 'axios';
 
 
 function Produtos() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   const [nome, setNome] = useState('');
   const [imagem, setImagem] = useState('');
   const [preco, setPreco] = useState('');
@@ -20,7 +22,7 @@ function Produtos() {
     
     try {
       // Fazendo a chamada POST à API
-      const response = await axios.post('https://localhost/produtos', {
+      const response = await axios.post('https://localhost:5000/produtos', {
         nome,
         imagem,
         preco,
@@ -43,7 +45,7 @@ function Produtos() {
      }
    };
  
-   const toggleMenu = () => setIsOpen(!isOpen);
+  
  
   return (
     <Container>
@@ -58,19 +60,19 @@ function Produtos() {
         <div>
         </div>
       </ProfileHeader>
-      <Menu isOpen={isOpen}>
+      <MenuContainer className={isMenuOpen ? 'open' : 'closed'}>
         <ul>
           <li><a href="/administrador">Cadastrar Itens</a></li>
           <li><a href="/registro">Cadastrar acesso a loja</a></li>
-          <li><a href="/cardapio">Cardapio digital</a></li>
+          <li><a href="/">Cardapio digital</a></li>
         </ul>
 
         <div>
         <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
         <span><a href="/login">Sair</a></span>
         </div>
-      </Menu>
-      <MenuToggle onClick={toggleMenu} className={isOpen ? 'open' : ''}>
+      </MenuContainer>
+      <MenuToggle onClick={toggleMenu} className={isMenuOpen ? 'open' : ''}>
         &#9776; 
       </MenuToggle> 
       
