@@ -6,5 +6,5 @@
 - 1.2 Instalado o pacote axios
 - 1.3 Instalado o pacote react-router
 - 2 Insira no terminal o comando: npm i (para instalação das dependencias)
-- 3 Inicie o projeto com: npm run dev <br><br>
-- 3. Link app backend: https://github.com/Csouzaf/projeto-integrador-4 
+- 3 Inicie o projeto com: npm run dev
+- 4 Link app backend: https://github.com/Csouzaf/projeto-integrador-4 
