@@ -74,6 +74,12 @@ p{
     color: ${({ theme }) => theme.COLORS.Green};
     font-weight: 600;
 }
+a{
+  text-decoration: none;
+  color: red;
+  font-size: 18px;
+  
+}
 
 
 @media (max-width: 1200px) {

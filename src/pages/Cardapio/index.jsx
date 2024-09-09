@@ -58,6 +58,12 @@ function Cardapio({}) {
           />
           <button onClick={handleSearch}>Buscar</button>
         </div>
+
+        <div>
+        
+        <a href="/administrador">Acesse ao sistema</a>
+        
+        </div>
       </Perfil>
 
       {!carregando && produtos.length === 0 && (
