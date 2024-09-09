@@ -101,15 +101,14 @@ const RegistroForm = ({onRegistro}) => {
             value={cpf}
             onChange={(value) => setCpf(value)}
             />
-            
+
             <Input
             type="text"
             maxLength="14"
             placeholder="CNPJ"
             value={cnpj}
             onChange={(value) => setCnpj(value)}
-            />
-            
+            />            
             <Input
             type="text"
             placeholder="Nome da Empresa"
