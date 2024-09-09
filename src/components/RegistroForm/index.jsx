@@ -101,6 +101,7 @@ const RegistroForm = ({onRegistro}) => {
             value={cpf}
             onChange={(value) => setCpf(value)}
             />
+            
             <Input
             type="text"
             maxLength="14"
