@@ -57,15 +57,11 @@ function Cardapio({}) {
 
         <div>
         
-        <a href="/administrador">Acesse ao sistema</a>
+        <p>Torne-se um cliente</p><a href="/administrador">acessando aqui</a>
         
         </div>
       </Perfil>
-      {!carregando && produtos.length === 0 && (
-        <SemItens />
-      )}
-
-
+     
       {!carregando && resultadoBusca.length > 0 && (
         <Pedidos>
           {resultadoBusca.map(item => (

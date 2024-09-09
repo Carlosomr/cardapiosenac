@@ -74,9 +74,9 @@ function Produtos() {
     <Container>
       <Header />
       <ProfileHeader>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
+        <img src="https://www.creativefabrica.com/wp-content/uploads/2019/08/Restaurant-Logo-by-Koko-Store-580x386.jpg"></img>
         <div>
-          <strong>Pizzaria Senac</strong>
+          <strong>PegaAí</strong>
           <p>Administrador</p>
         </div>
 
