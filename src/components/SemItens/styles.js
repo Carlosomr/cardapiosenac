@@ -25,6 +25,9 @@ p{
     font-weight: 500;
     padding: 10px;
 
+    a{
+        font-size: 22px;
+    }
 
 }
 

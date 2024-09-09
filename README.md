@@ -1,6 +1,6 @@
 # Projeto front-end 
 ## Feito em react js com vite e javascript 
-### Criado por Carlos Moura e Carlos Aquino
+### Criado por Carlos Moura, Carlos Aquino e Caique Souza Fonseca
 
 - 1 Instalado o pacote styled components<br>
 - 1.2 Instalado o pacote axios

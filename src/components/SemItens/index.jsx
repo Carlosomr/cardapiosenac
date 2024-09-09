@@ -9,7 +9,7 @@ function SemItens (){
             <div>
                 
                 <p>Você ainda não tem produtos cadastrados</p>
-                <p>Crie seus produtos na tela de administrador</p>
+                <p>Crie seus produtos na <a href="/administrador">tela de administrador</a></p>
 
                 <img src={carrinho}/>
             </div>
