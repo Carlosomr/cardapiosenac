@@ -108,7 +108,8 @@ const RegistroForm = ({onRegistro}) => {
             placeholder="CNPJ"
             value={cnpj}
             onChange={(value) => setCnpj(value)}
-            />            
+            />           
+             
             <Input
             type="text"
             placeholder="Nome da Empresa"
