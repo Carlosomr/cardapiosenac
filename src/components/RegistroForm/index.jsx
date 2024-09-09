@@ -58,13 +58,13 @@ const RegistroForm = ({onRegistro}) => {
     return (
         <RegistroContainer onSubmit={handleSubmitRegistro}>
             <Input
-            type="nome"
+            type="text"
             placeholder="Nome"
             value={primeiroNome}
             onChange={(value) => setPrimeiroNome(value)}
             />
             <Input
-            type="sobrenome"
+            type="text"
             placeholder="Sobrenome"
             value={segundoNome}
             onChange={(value) => setSegundoNome(value)}
@@ -82,34 +82,36 @@ const RegistroForm = ({onRegistro}) => {
             onChange={(value) => setSenha(value)}
             />
             <Input
-            type="endereco"
+            type="address"
             placeholder="Endereco"
             value={endereco}
             onChange={(value) => setEndereco(value)}
             />
             <Input
-            type="cod"
+            type="address"
             maxLength="8"
             placeholder="CEP"
             value={cep}
             onChange={(value) => setCep(value)}
             />
             <Input
-            type="cod"
+            type="address"
             maxLength="11"
             placeholder="CPF"
             value={cpf}
             onChange={(value) => setCpf(value)}
             />
+
             <Input
-            type="cod"
+            type="text"
             maxLength="14"
             placeholder="CNPJ"
             value={cnpj}
             onChange={(value) => setCnpj(value)}
-            />
-             <Input
-            type="nomeEmp"
+            />           
+             
+            <Input
+            type="text"
             placeholder="Nome da Empresa"
             value={empresa}
             onChange={(value) => setEmpresa(value)}

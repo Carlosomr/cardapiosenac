@@ -16,9 +16,9 @@ function Cardapio({}) {
 
   async function fetchProducts() {
     try {
-      const response = await fetch('https://localhost:5000/produtos');
+      const response = await fetch('http://localhost:5000/produtos');
       const data = await response.json();
-      setProdutos(data);
+      setResultadoBusca(data);
       setCarregando(false);
     } catch (error) {
       console.error('Erro ao carregar produtos:', error);
@@ -42,11 +42,7 @@ function Cardapio({}) {
     <Container>
       <Header />
       <Perfil>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s" alt="Logo da Pizzaria Senac" />
-        <div>
-          <strong>Pizzaria Senac</strong>
-          <p>Aberto das 18h ás 00h</p>
-        </div>
+       
 
         <div>
           <input 
@@ -65,10 +61,10 @@ function Cardapio({}) {
         
         </div>
       </Perfil>
-
       {!carregando && produtos.length === 0 && (
         <SemItens />
       )}
+
 
       {!carregando && resultadoBusca.length > 0 && (
         <Pedidos>
@@ -83,22 +79,6 @@ function Cardapio({}) {
         </Pedidos>
       )}
 
-      {!carregando && resultadoBusca.length === 0 && produtos.length > 0 && (
-        <SemItens mensagem="Nenhum item encontrado com essa descrição." />
-      )}
-
-      {!carregando && resultadoBusca.length === 0 && produtos.length > 0 && (
-        <Pedidos>
-          {produtos.map(item => (
-            <Itens
-              key={item.id}
-              imagem={item.imagem}
-              nome={item.nome}
-              preco={item.preco}
-            />
-          ))}
-        </Pedidos>
-      )}
     </Container>
   );
 }

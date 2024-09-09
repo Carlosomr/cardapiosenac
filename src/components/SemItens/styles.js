@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding: 80px;
 min-width: 100%;
 display: flex;
-justify-content: center;
+justify-content: right;
 
 
 div{
+    margin
     padding: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    bottom: 11rem;
     
 }
 
@@ -25,6 +27,9 @@ p{
     font-weight: 500;
     padding: 10px;
 
+    a{
+        font-size: 22px;
+    }
 
 }
 

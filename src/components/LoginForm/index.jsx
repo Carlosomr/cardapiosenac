@@ -9,26 +9,34 @@ const LoginForm = ({ onLogin }) => {
   const [senha, setsenha] = useState('');
   const navigate = useNavigate();
 
+  const formData = {
+    email,
+    senha,
+    
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/login');
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        
+      });
+      
       if (!response.ok) {
         throw new Error('Network response was not ok');
-      }
+      } 
+      
+        
+      else {
 
-      const usuarios = await response.json();
-      const user = usuarios.find(
-        (user) => user.email === email && user.senha === senha
-      );
-
-      if (user) {
-        console.log('Login Success:', user);
-        onLogin(user);
-        navigate('/cardapio');
-      } else {
-        console.log('Invalid credentials');
+        console.log('Login Success:');
+        navigate('/');
       }
 
     } catch (error) {
