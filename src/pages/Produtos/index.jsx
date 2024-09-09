@@ -40,6 +40,8 @@ function Produtos() {
       }
     };
 
+   
+
     fetchUsuarios();
   }, []);
 
@@ -110,9 +112,9 @@ function Produtos() {
             onChange={(value) => setNome(value)}
           />
 
-          <label>Imagem:</label>
+          <label>Url da Logo:</label>
           <Input
-            type="file"
+            type="text"
             placeholder="Imagem"
             value={imagem}
             onChange={(value) => setImagem(value)}

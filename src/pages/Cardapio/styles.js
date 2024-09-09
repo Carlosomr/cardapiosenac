@@ -30,8 +30,9 @@ export const Perfil = styled.main`
 
 background: ${({ theme }) => theme.COLORS.grey};
 border-radius: 15px 15px 0 0;
-padding-bottom: 25px;
+padding-bottom: 65px;
 display: flex;
+
 
 input{
 
@@ -62,6 +63,7 @@ div{
     flex-direction: column;
     justify-content: center;
     margin-left: 15px;
+    
 }
 
 img {
@@ -77,6 +79,7 @@ p{
 
 
 @media (max-width: 1200px) {
+
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -84,6 +87,7 @@ p{
     
 div{
       padding-top: 20px;
+      
     }
     
 
@@ -125,6 +129,9 @@ export const Pedidos = styled.main`
 background: white;
 display: grid;
     grid-template-columns: repeat(5, 1fr);
+    position: relative;
+bottom: 10rem;
+
 
 
     @media (max-width: 1200px){
