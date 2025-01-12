@@ -90,7 +90,7 @@ function Produtos() {
 
         <div>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
-          <span><a href="/login">Sair</a></span>
+          <span><a href="/">Sair</a></span>
         </div>
       </MenuContainer>
       <MenuToggle onClick={toggleMenu} className={isMenuOpen ? 'open' : ''}>
