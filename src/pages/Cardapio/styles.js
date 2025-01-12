@@ -30,7 +30,7 @@ export const Perfil = styled.main`
 
 background: ${({ theme }) => theme.COLORS.grey};
 border-radius: 15px 15px 0 0;
-padding-bottom: 65px;
+padding-bottom: 10rem;
 display: flex;
 
 
@@ -77,10 +77,8 @@ p{
     font-weight: 600;
 }
 a{
-  text-decoration: none;
-  color: red;
-  font-size: 18px;
-  
+
+  color: black;  
 }
 
 

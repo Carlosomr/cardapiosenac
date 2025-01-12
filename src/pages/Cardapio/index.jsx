@@ -58,11 +58,9 @@ function Cardapio() {
           />
           <button onClick={handleSearch}>Buscar</button>
         </div>
+
       </Perfil>
       
-      {!carregando && produtos.length === 0 && (
-        <SemItens />
-      )}
 
       {!carregando && resultadoBusca.length > 0 && (
         <Pedidos>
