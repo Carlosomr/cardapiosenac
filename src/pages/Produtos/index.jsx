@@ -10,23 +10,20 @@ function Produtos() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const [nome, setNome] = useState('');
-  const [imagem, setImagem] = useState('');
-  const [preco, setPreco] = useState('');
-  const [usuariosAdmId, setUsuarios] = useState([]); 
-  const [usuarioAdmId, setUsuarioSelecionado] = useState("");
+  const [nm_produto, setNome] = useState('');
+  const [img_url, setImagem] = useState('');
+  const [vl_item, setPreco] = useState('');
+
 
   const formData = {
-    nome,
-    preco,
-    imagem,
-    usuarioAdmId
-
+    nm_produto,
+    vl_item,
+    img_url
   };
 
   useEffect(() => {
     const fetchUsuarios = async () => {
-      const url = "http://localhost:5000/produtos/usuarios";
+      const url = "https://api-steel-tau-36.vercel.app/itens";
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -52,7 +49,7 @@ function Produtos() {
     try {
 
 
-      const response = await fetch('http://localhost:5000/produtos', {
+      const response = await fetch('https://api-steel-tau-36.vercel.app/cadastrar/itens', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +84,7 @@ function Produtos() {
         <ul>
           <li><a href="/administrador">Cadastrar Itens</a></li>
           <li><a href="/registro">Cadastrar acesso a loja</a></li>
-          <li><a href="/">Cardapio digital</a></li>
+          <li><a href="/cardapio">Cardapio digital</a></li>
           <li><a href="/administrador/nomes">Consultar Usuarios</a></li>
         </ul>
 
@@ -108,7 +105,7 @@ function Produtos() {
           <Input
             type="text"
             placeholder="Nome"
-            value={nome}
+            value={nm_produto}
             onChange={(value) => setNome(value)}
           />
 
@@ -116,7 +113,7 @@ function Produtos() {
           <Input
             type="text"
             placeholder="Imagem"
-            value={imagem}
+            value={img_url}
             onChange={(value) => setImagem(value)}
           />
 
@@ -124,22 +121,10 @@ function Produtos() {
           <Input
             type="text"
             placeholder="Preço"
-            value={preco}
+            value={vl_item}
             onChange={(value) => setPreco(value)}
           />
 
-          <label>Usuário:</label>
-          <select
-          value={usuarioAdmId}
-          onChange={(e) => setUsuarioSelecionado(e.target.value)}
-        >
-          <option value="">Selecione um usuário</option>
-          {usuariosAdmId.map((usuario) => (
-            <option key={usuario.id} value={usuario.id}>
-              {usuario.primeiroNome} {usuario.segundoNome}
-            </option>
-          ))}
-        </select>
 
           <button type="submit">Cadastrar</button>
         </form>

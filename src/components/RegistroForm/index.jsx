@@ -1,127 +1,104 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Input from '../Input';
 import Button from '../Button';
 import { RegistroContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-const RegistroForm = ({onRegistro}) => {
-    const [primeiroNome, setPrimeiroNome] = useState('');
-    const [segundoNome, setSegundoNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [endereco, setEndereco] = useState('');
-    const [cep, setCep] = useState('');
-    const [cpf , setCpf] = useState('');
-    const [cnpj, setCnpj] = useState('');
-    const [empresa, setEmpresa] = useState('');
-    const navigate = useNavigate();
+const RegistroForm = ({ onRegistro }) => {
+  const [usuario, setUsuario] = useState('');
+  const [nome_usuario, setEmpresa] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [cnpj, setCnpj] = useState('');
 
+  const navigate = useNavigate();
 
-    const handleSubmitRegistro = async (e) => {
-        e.preventDefault();
+  const handleSubmitRegistro = async (e) => {
+    e.preventDefault();
     
-        const formData = {
-            primeiroNome,
-            segundoNome,
-            email,
-            senha,
-            endereco,
-            cep,
-            cpf,
-            cnpj,
-            empresa
-        };
-    
-        try {
-            const response = await fetch('http://localhost:5000/registro', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-    
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-    
-            const result = await response.json();
-            console.log('Success:', result);
-            onRegistro(result);
-            navigate('/login');
-    
-        } catch (error) {
-            console.error('Error:', error);
-        }
+    const formData = {
+      usuario,
+      nome_usuario,
+      email,
+      senha,
+      endereco,
+      cnpj
     };
 
-    return (
-        <RegistroContainer onSubmit={handleSubmitRegistro}>
-            <Input
-            type="text"
-            placeholder="Nome"
-            value={primeiroNome}
-            onChange={(value) => setPrimeiroNome(value)}
-            />
-            <Input
-            type="text"
-            placeholder="Sobrenome"
-            value={segundoNome}
-            onChange={(value) => setSegundoNome(value)}
-            />
-            <Input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(value) => setEmail(value)}
-            />
-            <Input
-            type="password"
-            placeholder="Senha"
-            value={senha}
-            onChange={(value) => setSenha(value)}
-            />
-            <Input
-            type="address"
-            placeholder="Endereco"
-            value={endereco}
-            onChange={(value) => setEndereco(value)}
-            />
-            <Input
-            type="address"
-            maxLength="8"
-            placeholder="CEP"
-            value={cep}
-            onChange={(value) => setCep(value)}
-            />
-            <Input
-            type="address"
-            maxLength="11"
-            placeholder="CPF"
-            value={cpf}
-            onChange={(value) => setCpf(value)}
-            />
+    try {
+      const response = await fetch('https://api-steel-tau-36.vercel.app/cadastro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-            <Input
-            type="text"
-            maxLength="14"
-            placeholder="CNPJ"
-            value={cnpj}
-            onChange={(value) => setCnpj(value)}
-            />           
-             
-            <Input
-            type="text"
-            placeholder="Nome da Empresa"
-            value={empresa}
-            onChange={(value) => setEmpresa(value)}
-            />
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-            <Button type="">Registrar</Button>
-        </RegistroContainer>
+      const result = await response.json();
+      console.log('Success:', result);
+      alert('Cadastro realizado com sucesso')
+      onRegistro(result);
+      navigate('/');
 
-    );
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Erro ao realizar o cadastro. Tente novamente')
+    }
+  };
 
+  return (
+    <RegistroContainer onSubmit={handleSubmitRegistro}>
+      <h1>Cadastre-se</h1>
+
+      <Input
+        type="text"
+        placeholder="Nome"
+        value={usuario}
+        onChange={(value) => setUsuario(value)}
+      />
+      
+      <Input
+        type="text"
+        placeholder="Nome da Empresa"
+        value={nome_usuario}
+        onChange={(value) => setEmpresa(value)}
+      />
+
+      <Input
+        type="email"
+        placeholder="E-mail"
+        value={email}
+        onChange={(value) => setEmail(value)}
+      />
+      <Input
+        type="password"
+        placeholder="Senha"
+        value={senha}
+        onChange={(value) => setSenha(value)}
+      />
+      <Input
+        type="address"
+        placeholder="Endereco"
+        value={endereco}
+        onChange={(value) => setEndereco(value)}
+      />
+
+      <Input
+        type="text"
+        maxLength="14"
+        placeholder="CNPJ"
+        value={cnpj}
+        onChange={(value) => setCnpj(value)}
+      />           
+      
+      <Button type="">Registrar</Button>
+    </RegistroContainer>
+  );
 };
 
 export default RegistroForm;

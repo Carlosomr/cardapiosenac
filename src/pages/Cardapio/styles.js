@@ -37,7 +37,7 @@ display: flex;
 input{
 
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; 
   border-radius: 5px;
   margin-bottom: 10px;
   min-width: 300px;
@@ -134,8 +134,7 @@ input{
 export const Pedidos = styled.main`
 background: white;
 display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    position: relative;
+grid-template-columns: repeat(5, 1fr);
 bottom: 10rem;
 
 

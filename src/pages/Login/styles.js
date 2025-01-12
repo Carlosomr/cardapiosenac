@@ -9,9 +9,9 @@ export const PageContainer = styled.div`
 
 
   img{
-    flex: 1;
     height: 100vh;
-    width: 50vh;
+    width: 60%;
+    margin-right: auto;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     object-fit: cover;

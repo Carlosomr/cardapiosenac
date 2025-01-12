@@ -5,12 +5,12 @@ import { FormContainer } from './styles';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onLogin }) => {
-  const [email, setEmail] = useState('');
+  const [usuario, setEmail] = useState('');
   const [senha, setsenha] = useState('');
   const navigate = useNavigate();
 
   const formData = {
-    email,
+    usuario,
     senha,
     
 };
@@ -19,7 +19,7 @@ const LoginForm = ({ onLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('https://api-steel-tau-36.vercel.app/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,20 +36,23 @@ const LoginForm = ({ onLogin }) => {
       else {
 
         console.log('Login Success:');
-        navigate('/');
+        alert("Login efetuado")
+        navigate('/administrador');
       }
 
     } catch (error) {
       console.error('Error:', error);
+      alert("Usuario ou senha invalido")
     }
   };
 
   return (
     <FormContainer onSubmit={handleSubmit}>
+      <h1>Login</h1>
       <Input
-        type="email"
-        placeholder="E-mail"
-        value={email}
+        type="text"
+        placeholder="usuario"
+        value={usuario}
         onChange={(value) => setEmail(value)}
       />
       <Input

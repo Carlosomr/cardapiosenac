@@ -10,8 +10,8 @@ import ConsultarUsuarios  from '../pages/ConsultarUsuarios';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Cardapio />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login/>} />
+      <Route path="/cardapio" element={<Cardapio />} />
       <Route path="/administrador" element={<Produtos />} />
       <Route path="/registro" element={<Registro />} />
       <Route path="/administrador/nomes" element={<ConsultarUsuarios />} />

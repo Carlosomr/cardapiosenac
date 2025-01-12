@@ -8,7 +8,7 @@ export function Itens({nome, preco, imagem}){
             <img src ={imagem} ></img>
          <div>
          <strong>{nome}</strong>
-         <span>{preco}</span>
+         <span>R$ {preco}</span>
          </div>
         </ProdutoItem>
     </Produto>
