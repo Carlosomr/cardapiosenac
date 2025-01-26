@@ -38,5 +38,13 @@ export const FormContainer = styled.form`
     margin-top: 10px;
     cursor: pointer;
   }
+div{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 700px) {
+  width: 100%;
+}
 `;
 

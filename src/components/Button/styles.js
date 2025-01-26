@@ -14,7 +14,19 @@ export const StyledButton = styled.button`
     background-color:#ff1515;
   }
   &.register-button {
-    background: #B1B1B1; // Cor principal do botão
+    background:#8d8b8b;
+    // Cor principal do botão
     color: #FFFFFF; // Cor da fonte
+    width: 100%;
   }
+
+  &.register-button:hover {
+   
+    background:rgb(85, 84, 84); 
+  }
+
+.register-link {
+  color: white;
+  text-decoration: none;
+}
 `;

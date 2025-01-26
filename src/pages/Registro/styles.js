@@ -24,7 +24,7 @@ export const RegistroContainer = styled.div`
 
     img{
       object-fit: cover;
-      width: 60%;
+      width: 0%;
     }
   }
   @media (max-width: 400px) {

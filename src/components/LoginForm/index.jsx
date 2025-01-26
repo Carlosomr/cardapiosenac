@@ -67,10 +67,11 @@ const LoginForm = ({ onLogin }) => {
       <Button type="submit">Acesse</Button>
 
       <span>Esqueci a senha</span>
-
-      <Button className="register-button">
-        <Link to="/registro">Cadastre-se</Link>
+    <div>
+    <Button className="register-button">
+      <Link className="register-link" to="/registro">Cadastre-se</Link>
       </Button>
+    </div>
     </FormContainer>
   );
 };
