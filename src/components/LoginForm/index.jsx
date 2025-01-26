@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { FormContainer } from './styles';
-import { useNavigate} from 'react-router-dom';
+import { FormContainer} from './styles';
+import { useNavigate, Link} from 'react-router-dom';
 
 
 
@@ -67,6 +67,10 @@ const LoginForm = ({ onLogin }) => {
       <Button type="submit">Acesse</Button>
 
       <span>Esqueci a senha</span>
+
+      <Button className="register-button">
+        <Link to="/registro">Cadastre-se</Link>
+      </Button>
     </FormContainer>
   );
 };

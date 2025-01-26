@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   background-color: #FF4242;
-  color: FFFFFF;
+  color: #FFFFFF;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -11,6 +11,10 @@ export const StyledButton = styled.button`
 
 
   &:hover {
-    background-color:rgb(255, 21, 21);
+    background-color:#ff1515;
+  }
+  &.register-button {
+    background: #B1B1B1; // Cor principal do botão
+    color: #FFFFFF; // Cor da fonte
   }
 `;

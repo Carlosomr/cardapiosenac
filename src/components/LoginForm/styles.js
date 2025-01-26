@@ -7,39 +7,36 @@ export const FormContainer = styled.form`
   justify-content: end;
   margin-right: auto;
   width: 27.86vw;
-  height: 40.67vh;
   padding: 20px;
   background-color: #FBFBFB ;
-  
 
+  input {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+  }
 
-input{
-  font-size: 1.3rem;
-  font-family: 'Roboto', sans-serif;
-  
-}
-h1{
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #FF4242 ;
-  font-size: 2rem;
-  margin-bottom: 100px;
-  font-size: 2rem;
-  text-align: center;
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #FF4242;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
 
-}
-a{
-  text-decoration: none;
-  color: black;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-span{
-  font-size: 1rem;
-  font-weight: 300;
-  padding: 5px;
-  margin-top: 10px;
-  cursor: pointer; 
-}
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
 `;
 
