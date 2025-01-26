@@ -1,5 +1,6 @@
 import LoginForm from '../../components/LoginForm';
-import { PageContainer, Bloco, Blocod } from './styles';
+import food from '../../assets/food.png'
+import { PageContainer, Blocod } from './styles';
 
 function LoginPage() {
   const handleLogin = (credentials) => {
@@ -8,8 +9,10 @@ function LoginPage() {
 
   return (
     <PageContainer>
-      <img src="https://www.proceso.com.mx/u/fotografias/fotosnoticias/2019/6/25/100602.jpg" alt="" />
+      <img src={food} alt="foto de comida" />
+    
       <LoginForm onLogin={handleLogin} />
+      
     </PageContainer>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect  } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, ProfileHeader, MenuContainer, MenuToggle, Cadastrar } from './styles';
 import { Header } from '../../components/Header';
 import Input from '../../components/Input';
@@ -82,15 +83,13 @@ function Produtos() {
       </ProfileHeader>
       <MenuContainer className={isMenuOpen ? 'open' : 'closed'}>
         <ul>
-          <li><a href="/administrador">Cadastrar Itens</a></li>
-          <li><a href="/registro">Cadastrar acesso a loja</a></li>
-          <li><a href="/cardapio">Cardapio digital</a></li>
-          <li><a href="/administrador/nomes">Consultar Usuarios</a></li>
+        <li><Link to="/registro">Cadastrar acesso a loja</Link></li>
+        <li><Link to="/cardapio">Cardapio digital</Link></li>
         </ul>
 
         <div>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYPP6Hob6Unrvq1qeUHC-FzJdYhx7NV4u2A&s"></img>
-          <span><a href="/">Sair</a></span>
+          <span><Link to="/">Sair</Link></span>
         </div>
       </MenuContainer>
       <MenuToggle onClick={toggleMenu} className={isMenuOpen ? 'open' : ''}>

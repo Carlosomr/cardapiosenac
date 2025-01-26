@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import { FormContainer } from './styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+
+
+
 
 const LoginForm = ({ onLogin }) => {
   const [usuario, setEmail] = useState('');
@@ -48,10 +51,10 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      <h1>Faça seu Login</h1>
       <Input
         type="text"
-        placeholder="usuario"
+        placeholder="Usuario"
         value={usuario}
         onChange={(value) => setEmail(value)}
       />
@@ -61,7 +64,9 @@ const LoginForm = ({ onLogin }) => {
         value={senha}
         onChange={(value) => setsenha(value)}
       />
-      <Button type="submit">Entrar</Button>
+      <Button type="submit">Acesse</Button>
+
+      <span>Esqueci a senha</span>
     </FormContainer>
   );
 };

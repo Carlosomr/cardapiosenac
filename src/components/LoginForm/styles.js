@@ -1,23 +1,45 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: end;
   margin-right: auto;
-  width: 600px;
-  height: 25%;
+  width: 27.86vw;
+  height: 40.67vh;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  border: solid 1px;
-  border-color:rgb(197, 197, 197);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FBFBFB ;
+  
+
 
 input{
   font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  
 }
 h1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #FF4242 ;
   font-size: 2rem;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
+  font-size: 2rem;
+  text-align: center;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+span{
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer; 
 }
 `;
+

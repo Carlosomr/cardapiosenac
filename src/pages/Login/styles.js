@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const PageContainer = styled.div`
+  font-family: 'Roboto', sans-serif;
   flex: 1;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FBFBFB;
 
 
   img{
     height: 100vh;
-    width: 60%;
+    width: 50%;
     margin-right: auto;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
     object-fit: cover;
   }
 
@@ -57,7 +57,7 @@ export const Bloco = styled.main`
 
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #F1F1F1;
     color: #333;
   }
 `;
