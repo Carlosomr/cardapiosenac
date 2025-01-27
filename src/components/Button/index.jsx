@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { StyledButton } from './styles';
 
-const Button = ({ children, onClick, className }) => {
+// Em button.jsx
+const Button = ({ children, onClick, className, type }) => {
   return (
-    <StyledButton onClick={onClick} className={className}>
+    <StyledButton 
+      onClick={onClick} 
+      className={`${className || ''} ${type}-button`}
+    >
       {children}
     </StyledButton>
   );

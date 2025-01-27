@@ -48,7 +48,7 @@ function Cardapio() {
           <strong>Pizzaria Senac</strong>
           <p>Aberto das 18h ás 00h</p>
         </div>
-        <div>
+        <div className = "pesquisa">
           <input 
             type="text" 
             id="search" 

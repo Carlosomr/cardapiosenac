@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { FormContainer} from './styles';
-import { useNavigate, Link} from 'react-router-dom';
+import { FormContainer } from './styles';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 
@@ -64,15 +64,18 @@ const LoginForm = ({ onLogin }) => {
         value={senha}
         onChange={(value) => setsenha(value)}
       />
-      <Button type="submit">Acesse</Button>
+      <Button className="Login" type="submit">Acesse</Button>
 
       <span>Esqueci a senha</span>
-    <div>
-    <Button className="register-button">
-      <Link className="register-link" to="/registro">Cadastre-se</Link>
+
+      <Button className="register-button" type="button">
+        <Link className="register-link" to="/registro">Cadastre-se</Link>
       </Button>
-    </div>
     </FormContainer>
+
+    
+      
+   
   );
 };
 

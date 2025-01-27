@@ -3,15 +3,14 @@ export const Container = styled.main`
 
 display: flex;
 flex-direction: column;
-
 margin-top: 130px;
 border-radius: 15px 15px 0 0;
-height: 100px;
-min-width: 1400px;
+width: 100%;
+
 
 @media (max-width: 1200px) {
     flex-direction: row;
-    min-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background: white;
@@ -19,10 +18,11 @@ min-width: 1400px;
 
   @media (max-width: 700px) {
     flex-direction: row;
-    min-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background: white;
+
   }
 
 `;
@@ -32,7 +32,14 @@ background: ${({ theme }) => theme.COLORS.grey};
 border-radius: 15px 15px 0 0;
 padding-bottom: 10rem;
 display: flex;
+gap: 20px;
 
+.pesquisa{
+margin-top: 50px;
+display: flex;
+flex-direction: row;
+gap: 5px;
+}
 
 input{
 
@@ -40,16 +47,18 @@ input{
   border: 1px solid #ccc; 
   border-radius: 5px;
   margin-bottom: 10px;
-  min-width: 300px;
   font-size: 16px;
+  width: 500px;
+  height: 40%;
+  
 }
 button{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
-  width: 100%;
   font-size: 16px;
+  height: 40%;
   background: ${({ theme }) => theme.COLORS.Green};
 
 }
@@ -63,14 +72,13 @@ div{
     flex-direction: column;
     justify-content: center;
     margin-left: 15px;
-    
 }
 
 img {
     border-radius: 50%;
     width: 130px;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 80px;
+    margin-top: 30px;
 }
 p{
     color: ${({ theme }) => theme.COLORS.Green};
@@ -93,32 +101,58 @@ div{
       padding-top: 20px;
       
     }
-    
+.pesquisa{
+display: flex;
+flex-direction: row;
+gap: 5px;
+} 
 
 input{
-  min-width: 100%;
-  margin: auto;
-  
+
+padding: 10px;
+border: 1px solid #ccc; 
+border-radius: 5px;
+margin-bottom: 10px;
+font-size: 16px;
+width: 500px;
+height: 40%;
+
 }
- button{
-      min-width: 100%;
-      margin: auto;
-      }
+button{
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-bottom: 10px;
+font-size: 16px;
+height: 40%;
+background: ${({ theme }) => theme.COLORS.Green};
+
+}
 }
 @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
     min-width: 100%;
     background: white;
+  img{
+    margin: auto;
+    margin-top: 15px;
+  }
     
 div{
       padding-top: 20px;
     }
     
+.pesquisa{
+display: flex;
+flex-direction: column;
+gap: 5px;
+} 
 
 input{
   min-width: 100%;
   margin: auto;
+  width: 100%;
   
 }
  button{
@@ -132,9 +166,9 @@ input{
 export const Pedidos = styled.main`
 background: white;
 display: grid;
-grid-template-columns: repeat(5, 1fr);
-bottom: 10rem;
-
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+padding: 50px;
 
 
     @media (max-width: 1200px){
@@ -146,15 +180,16 @@ bottom: 10rem;
   }
 
   @media (max-width: 700px){
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
     padding: 0;
     background: white;
   }
 
   @media (max-width: 470px){
   
-    width: 100%;
+    width: 90%;
     grid-template-columns: repeat(1, 1fr);
     background: white;
 

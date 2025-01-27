@@ -2,31 +2,39 @@ import styled from "styled-components";
 
 export const Produto = styled.div`
 display: flex;
-flex-direction: column;
-width: 200px;
-height: 250px;
-margin: 30px 30px 20px 20px;
+flex-direction: row;
 background: ${({ theme }) => theme.COLORS.grey};
-border-radius: 15px 15px 0 0;
-
+border: 1px solid  rgb(211, 211, 211);
+border-radius: 10px;
+width: 400px;
+height: 120px;
 
 img{
-    flex-direction: column;
-    max-width: 200px;
-    border-radius: 15px 15px 0 0;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px 0px 0px 10px;
 }
 div{
     display: flex;
     flex-direction: column;
+    width: 400px;
+}
+strong{
+text-align: center;
+margin: 10px;
 }
 span{
-    margin: 5px;
+    margin: 10px;
+}
+p{
+ margin-left: 5px;
+}
+
+@media (max-width: 400px){
+  width: 70%;
+
 }
 
 `;
-export const ProdutoItem = styled.div`
-display: flex;
-flex-direction: column;
 
-`;
 

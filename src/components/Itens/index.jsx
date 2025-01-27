@@ -1,16 +1,15 @@
 
-import {Produto, ProdutoItem } from "./styles"
+import {Produto} from "./styles"
 
 export function Itens({nome, preco, imagem}){
   return(
     <Produto>
-        <ProdutoItem>
             <img src ={imagem} ></img>
          <div>
          <strong>{nome}</strong>
          <span>R$ {preco}</span>
+         <p>Oh gloria, patrão abriu o bolso e pagou o fotografo</p>
          </div>
-        </ProdutoItem>
     </Produto>
     
   )
